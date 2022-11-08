@@ -82,9 +82,9 @@ func (d *DlistClient) put(ctx context.Context, url string, body []byte, headers 
 }
 
 func (d *DlistClient) PostGuilds(count int) ([]byte, error) {
-	return d.put(context.Background(), fmt.Sprint("/bots/%s/guilds?count=%d", d.BotID, count), nil, http.Header{})
+	return d.put(context.Background(), fmt.Sprintf("/bots/%s/guilds?count=%d", d.BotID, count), nil, http.Header{})
 }
 
 func (d *DlistClient) GetBot(ID string) ([]byte, error) {
-	return d.get(context.Background(), fmt.Sprint("/bots/%s", ID), http.Header{})
+	return d.get(context.Background(), fmt.Sprintf("/bots/%s", ID), http.Header{})
 }
